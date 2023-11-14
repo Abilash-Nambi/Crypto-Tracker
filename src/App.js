@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import HomePage from "./Pages/HomePage";
 import CoinPage from "./Pages/CoinPage";
 import { makeStyles } from "@mui/styles";
+import AlertMessage from "./Components/Alert";
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/coins/:id" element={<CoinPage />}></Route>
         </Routes>
+        <AlertMessage />
       </div>
     </BrowserRouter>
   );

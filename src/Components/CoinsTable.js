@@ -69,29 +69,16 @@ const CustomPagination = styled(Pagination)(({ theme }) => ({
 }));
 
 function CoinsTable() {
-  const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const { currency, symbol } = CryptoData();
+  const { currency, symbol, coins, loading, fetchData } = CryptoData();
   const [page, setPage] = useState(1);
 
   const styles = useStyles();
   const navigate = useNavigate();
+
   useEffect(() => {
     fetchData();
   }, [currency]);
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(CoinList(currency));
-      setCoins(response.data);
-      console.log(response, "==CoinList ");
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleSearch = () => {
     return coins.filter(

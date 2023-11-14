@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CryptoData } from "../CryptoContext";
 
+import AuthModal from "./Auth/AuthModal";
+
 const darkTheme = createTheme({
   palette: {
     primary: {
@@ -40,7 +42,7 @@ function Header() {
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar color="transparent" position="static">
-        <Container>
+        <Container maxWidth="xl">
           <Toolbar className={styles.mainHeader}>
             <Typography variant="h6" onClick={() => navigate("/")}>
               Crypto Hunter
@@ -58,6 +60,7 @@ function Header() {
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>
             </Select>
+            <AuthModal />
           </Toolbar>
         </Container>
       </AppBar>
