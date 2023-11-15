@@ -115,7 +115,7 @@ export default function AuthModal() {
       <Button
         variant="contained"
         onClick={handleOpen}
-        sx={{ width: 85, height: 40, marginLeft: 15, background: "#eebc1d" }}
+        sx={{ width: 85, height: 40, marginLeft: 5, background: "#eebc1d" }}
       >
         log in
       </Button>

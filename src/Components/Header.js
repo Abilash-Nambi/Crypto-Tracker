@@ -53,7 +53,6 @@ function Header() {
               sx={{
                 width: 100,
                 heiight: 40,
-                marginRight: 15,
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
