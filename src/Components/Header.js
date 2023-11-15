@@ -13,6 +13,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CryptoData } from "../CryptoContext";
 
 import AuthModal from "./Auth/AuthModal";
+import UserSideBar from "./Auth/UserSideBar";
 
 const darkTheme = createTheme({
   palette: {
@@ -38,7 +39,7 @@ function Header() {
   const styles = useStyles();
   const navigate = useNavigate();
 
-  const { currency, setCurrency } = CryptoData();
+  const { currency, setCurrency, user } = CryptoData();
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar color="transparent" position="static">
@@ -60,7 +61,7 @@ function Header() {
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>
             </Select>
-            <AuthModal />
+            {user ? <UserSideBar /> : <AuthModal />}
           </Toolbar>
         </Container>
       </AppBar>

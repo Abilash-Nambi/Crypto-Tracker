@@ -1,6 +1,9 @@
 import { Box, Button, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import { Auth } from "../../Pages/firebase";
+import { CryptoData } from "../../CryptoContext";
 
 const useStyles = makeStyles(() => ({
   Login: {
@@ -12,10 +15,37 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
-function Login() {
+function Login({ handleClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const styles = useStyles();
+  const { setAlert } = CryptoData();
+
+  const handleSubmit = async () => {
+    if (!email || !password) {
+      setAlert({
+        open: true,
+        message: "Please fill all the Fields",
+        type: "error",
+      });
+    }
+    try {
+      const response = await signInWithEmailAndPassword(Auth, email, password);
+      console.log(response, "thi is response");
+      setAlert({
+        open: true,
+        message: `Sign Up Successful. Welcome ${response.user.email}`,
+        type: "success",
+      });
+      handleClose();
+    } catch (error) {
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
+    }
+  };
 
   return (
     <Box className={styles.Login}>
@@ -39,9 +69,9 @@ function Login() {
         variant="contained"
         size="large"
         sx={{ backgroundColor: "#EEBC1D" }}
-        //onClick={handleSubmit}
+        onClick={handleSubmit}
       >
-        Sign Up
+        Log in
       </Button>
     </Box>
   );

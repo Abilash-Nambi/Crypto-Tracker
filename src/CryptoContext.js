@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
 import { CoinList } from "./Config/api";
+import { onAuthStateChanged } from "firebase/auth";
+import { Auth } from "./Pages/firebase";
 
 const Crypto = createContext();
 
@@ -18,6 +20,14 @@ function CryptoContext({ children }) {
     type: "success",
   });
   //console.log(currency);
+  console.log(user, "user");
+  useEffect(() => {
+    onAuthStateChanged(Auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else setUser(null);
+    });
+  }, []);
 
   useEffect(() => {
     if (currency === "INR") {
@@ -49,6 +59,7 @@ function CryptoContext({ children }) {
         fetchData,
         alert,
         setAlert,
+        user,
       }}
     >
       {children}

@@ -40,7 +40,7 @@ function SignUp({ handleClose }) {
         email,
         password
       );
-      console.log("this is reslt", result);
+      //console.log("this is reslt", result);
       setAlert({
         open: true,
         message: `Sign Up Successful. Welcome ${result.user.email}`,

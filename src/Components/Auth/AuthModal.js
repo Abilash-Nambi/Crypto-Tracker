@@ -11,6 +11,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import GoogleButton from "react-google-button";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Auth } from "../../Pages/firebase";
+import { CryptoData } from "../../CryptoContext";
 
 const useStyles = makeStyles((theme) => ({
   login: {},
@@ -25,6 +29,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     color: "white",
     borderRadius: 10,
+  },
+  google: {
+    padding: 25,
+    paddingTop: 0,
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+
+    gap: 20,
+    fontSize: 20,
   },
 }));
 
@@ -70,6 +84,29 @@ export default function AuthModal() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const { setAlert } = CryptoData();
+  const googleProvider = new GoogleAuthProvider();
+
+  const signInWithGoogle = () => {
+    signInWithPopup(Auth, googleProvider)
+      .then((res) => {
+        setAlert({
+          open: true,
+          message: `Sign Up Successful. Welcome ${res.user.email}`,
+          type: "success",
+        });
+
+        handleClose();
+      })
+      .catch((error) => {
+        setAlert({
+          open: true,
+          message: error.message,
+          type: "error",
+        });
+        return;
+      });
+  };
 
   const styles = useStyles();
 
@@ -110,11 +147,18 @@ export default function AuthModal() {
                 </Tabs>
               </Box>
               <CustomTabPanel value={value} index={0}>
-                <Login />
+                <Login handleClose={handleClose} />
               </CustomTabPanel>
               <CustomTabPanel value={value} index={1}>
                 <SignUp handleClose={handleClose} />
               </CustomTabPanel>
+              <Box className={styles.google}>
+                <span>OR</span>
+                <GoogleButton
+                  style={{ width: "100%", outline: "none" }}
+                  onClick={signInWithGoogle}
+                />
+              </Box>
             </Box>
           </Box>
         </Fade>
