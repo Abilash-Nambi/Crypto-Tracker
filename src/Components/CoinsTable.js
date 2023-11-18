@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   row: {
-    backgroundColor: "#16171a",
+    //backgroundColor: "#16171a",
     cursor: "pointer",
     "&:hover": {
       backgroundColor: "#131111",
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomPagination = styled(Pagination)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    padding: 1, // Adjust the padding for small screens
+    padding: 1,
   },
 }));
 
