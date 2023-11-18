@@ -46,7 +46,7 @@ function Header() {
         <Container maxWidth="xl">
           <Toolbar className={styles.mainHeader}>
             <Typography variant="h6" onClick={() => navigate("/")}>
-              Crypto Hunter
+              Crypto Tracker
             </Typography>
             <Select
               variant="outlined"
