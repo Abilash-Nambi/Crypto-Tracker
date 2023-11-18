@@ -41,11 +41,14 @@ const useStyles = makeStyles(() => ({
 
 function Banner() {
   const styles = useStyles();
+
   return (
     <Box className={styles.banner}>
       <Container>
         <Box className={styles.bannerContent}>
-          <Typography variant="h2">Crypto Hunter</Typography>
+          <Typography variant="h2" color="white">
+            Crypto Hunter
+          </Typography>
           <Typography variant="subtitile2">
             Get all the Info regarding your favorite Crypto currency..
           </Typography>

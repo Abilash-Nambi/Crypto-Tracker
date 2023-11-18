@@ -100,7 +100,7 @@ function CoinPage() {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ height: "95vh" }}>
         <CustomGridSidebar item xs={12} md={4} sm={12}>
           <img
             src={coin?.image.large}

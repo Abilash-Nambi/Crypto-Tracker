@@ -5,6 +5,7 @@ import { createContext } from "react";
 import { CoinList } from "./Config/api";
 import { onAuthStateChanged } from "firebase/auth";
 import { Auth } from "./Pages/firebase";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const Crypto = createContext();
 
@@ -19,8 +20,18 @@ function CryptoContext({ children }) {
     message: "hai",
     type: "success",
   });
+  const [theme, setTheme] = useState("dark");
   //console.log(currency);
-  console.log(user, "user");
+  //console.log(user, "user");
+  let darkTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#fff",
+      },
+      mode: theme,
+    },
+  });
+  darkTheme = responsiveFontSizes(darkTheme);
   useEffect(() => {
     onAuthStateChanged(Auth, (user) => {
       if (user) {
@@ -60,6 +71,8 @@ function CryptoContext({ children }) {
         alert,
         setAlert,
         user,
+        darkTheme,
+        setTheme,
       }}
     >
       {children}
