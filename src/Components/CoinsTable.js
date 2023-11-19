@@ -30,7 +30,7 @@ const darkTheme = createTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   coinTable: {
     textAlign: "center",
     "& .MuiTypography-h4": {
@@ -55,11 +55,18 @@ const useStyles = makeStyles((theme) => ({
       color: "gold",
     },
   },
-  row: {
+  rowDark: {
     //backgroundColor: "#16171a",
     cursor: "pointer",
     "&:hover": {
       backgroundColor: "#131111",
+    },
+    fontFamily: "Montserrat",
+  },
+  rowLight: {
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: "#fff7e6",
     },
     fontFamily: "Montserrat",
   },
@@ -73,7 +80,7 @@ const CustomPagination = styled(Pagination)(({ theme }) => ({
 
 function CoinsTable() {
   const [search, setSearch] = useState("");
-  const { currency, symbol, coins, loading, fetchData } = CryptoData();
+  const { currency, symbol, coins, loading, fetchData, theme } = CryptoData();
   const [page, setPage] = useState(1);
 
   const styles = useStyles();
@@ -136,7 +143,9 @@ function CoinsTable() {
                     <TableRow
                       key={data.name}
                       onClick={() => navigate(`/coins/${data.id}`)}
-                      className={styles.row}
+                      className={
+                        theme === "dark" ? styles.rowDark : styles.rowLight
+                      }
                     >
                       <TableCell
                         component="th"
@@ -153,7 +162,6 @@ function CoinsTable() {
                           style={{
                             display: "flex",
                             flexDirection: "column",
-                            color: "white",
                           }}
                         >
                           <span

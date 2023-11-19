@@ -73,6 +73,7 @@ function CryptoContext({ children }) {
         user,
         darkTheme,
         setTheme,
+        theme,
       }}
     >
       {children}
