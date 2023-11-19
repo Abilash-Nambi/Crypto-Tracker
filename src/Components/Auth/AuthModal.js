@@ -17,7 +17,6 @@ import { Auth } from "../../Pages/firebase";
 import { CryptoData } from "../../CryptoContext";
 
 const useStyles = makeStyles((theme) => ({
-  login: {},
   style: {
     position: "absolute",
     top: "50%",
@@ -27,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #000",
     boxShadow: 24,
     backgroundColor: theme.palette.background.paper,
-    color: "white",
+
     borderRadius: 10,
   },
   google: {
@@ -111,7 +110,7 @@ export default function AuthModal() {
   const styles = useStyles();
 
   return (
-    <Box className={styles.login}>
+    <Box>
       <Button
         variant="contained"
         onClick={handleOpen}

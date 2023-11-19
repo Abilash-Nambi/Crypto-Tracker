@@ -23,10 +23,16 @@ function CryptoContext({ children }) {
   const [theme, setTheme] = useState("dark");
   //console.log(currency);
   //console.log(user, "user");
+  let primaryColor = "";
+  if (theme === "dark") {
+    primaryColor = "#fff";
+  } else {
+    primaryColor = "#000";
+  }
   let darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#fff",
+        main: primaryColor,
       },
       mode: theme,
     },
