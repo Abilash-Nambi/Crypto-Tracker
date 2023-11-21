@@ -25,7 +25,7 @@ const darkTheme = createTheme({
     mode: "dark",
   },
 });
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   mainHeader: {
     "& .MuiTypography-root": {
       flex: 1,
@@ -33,6 +33,16 @@ const useStyles = makeStyles(() => ({
       fontFamily: "Montserrat",
       fontWeight: "bold",
       cursor: "pointer",
+    },
+  },
+  title: {
+    [theme.breakpoints.down("md")]: {
+      fontSize: "12px", // Adjust the font size as needed
+    },
+  },
+  title2: {
+    [theme.breakpoints.down("md")]: {
+      display: "none", // Adjust the font size as needed
     },
   },
 }));
@@ -57,11 +67,16 @@ function Header() {
     <AppBar color="transparent" position="static">
       <Container maxWidth="xl">
         <Toolbar className={styles.mainHeader}>
-          <Typography variant="h6" onClick={() => navigate("/")}>
+          <Typography
+            className={styles.title}
+            variant="h6"
+            onClick={() => navigate("/")}
+            pt={1}
+          >
             Crypto Tracker
           </Typography>
-          <Box display={"flex"}>
-            <Typography pt={1}>
+          <Box display={"flex"} alignItems="center">
+            <Typography className={styles.title2}>
               {checked ? " Dark Mode" : "Light Mode"}{" "}
             </Typography>
             <Switch
