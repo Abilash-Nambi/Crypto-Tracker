@@ -50,7 +50,7 @@ const Carousel = () => {
   const items = trending?.map((data) => {
     let profit = data.price_change_percentage_24h >= 0;
     return (
-      <Link to={`/coins/${data.name}`} className={styles.carouselItem}>
+      <Link to={`/coins/${data.id}`} className={styles.carouselItem}>
         <img
           src={data?.image}
           alt={data.name}
