@@ -28,7 +28,7 @@ const Carousel = () => {
   const [trending, setTrending] = useState([]);
   const styles = useStyles();
   const { currency, symbol } = CryptoData();
-
+  console.log(trending, "trend");
   useEffect(() => {
     fetchTrendingCoins();
   }, [currency]);

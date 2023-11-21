@@ -83,7 +83,7 @@ function Header() {
             <MenuItem value="USD">USD</MenuItem>
             <MenuItem value="INR">INR</MenuItem>
           </Select>
-          {user ? <UserSideBar /> : <AuthModal />}
+          <Box> {user ? <UserSideBar /> : <AuthModal />}</Box>
         </Toolbar>
       </Container>
     </AppBar>

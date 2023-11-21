@@ -36,8 +36,9 @@ function CoinPage() {
   const [coin, setCoin] = useState();
   const { currency, symbol } = CryptoData();
   const classes = useStyles();
+  const lowercaseId = id.toLowerCase();
   const fetchCoin = async () => {
-    const { data } = await axios.get(SingleCoin(id));
+    const { data } = await axios.get(SingleCoin(lowercaseId));
     setCoin(data);
   };
 
@@ -100,7 +101,7 @@ function CoinPage() {
 
   return (
     <>
-      <Grid container spacing={2} sx={{ height: "95vh" }}>
+      <Grid container spacing={2}>
         <CustomGridSidebar item xs={12} md={4} sm={12}>
           <img
             src={coin?.image.large}
