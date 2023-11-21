@@ -36,9 +36,9 @@ function CoinPage() {
   const [coin, setCoin] = useState();
   const { currency, symbol } = CryptoData();
   const classes = useStyles();
-  const lowercaseId = id.toLowerCase();
+  //const lowercaseId = id.toLowerCase();
   const fetchCoin = async () => {
-    const { data } = await axios.get(SingleCoin(lowercaseId));
+    const { data } = await axios.get(SingleCoin(id));
     setCoin(data);
   };
 
@@ -53,6 +53,7 @@ function CoinPage() {
     alignItems: "center",
     marginTop: 25,
     borderRight: "2px solid grey",
+    height: "100vh",
   }));
   const CustomGridRight = styled(Grid)(({ theme }) => ({
     display: "flex",
