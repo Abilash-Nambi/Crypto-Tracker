@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+<h1 align="center" id="title">🚀 Crypto Tracker</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p id="description">Welcome to Crypto Tracker a dynamic web application that provides users with real-time updates on their favourite cryptocurrencies. Dive into the world of digital assets with a seamless and interactive interface powered by React Material-UI (MUI) and Firebase authentication.</p>
 
-## Available Scripts
+<h2>🚀 Demo</h2>
 
-In the project directory, you can run:
+[https://lnkd.in/gY8qEvyD](https://lnkd.in/gY8qEvyD)
 
-### `npm start`
+  
+  
+<h2>🧐 Features</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here're some of the project's best features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*   Live Cryptocurrency Data: Harness the power of the CoinGecko API to deliver up-to-the-minute information on a wide range of cryptocurrencies. Stay ahead with accurate and timely market data.
+*   Secure Authentication: Utilizing Firebase Crypto Tracker ensures a secure login and logout experience for users safeguarding their personal information and enhancing the overall platform security. Additionally Google login authentication offers a convenient and efficient way for users to access their accounts.
+*   Intuitive User Interface: The sleek and responsive design crafted with React and Material-UI guarantees an engaging user experience. Navigate effortlessly through the application whether you're a seasoned investor or a crypto enthusiast.
+*   Search and Pagination: Empower users with a robust search functionality to easily find and track their preferred cryptocurrencies. Implementing pagination ensures smooth navigation through extensive lists of coins.
+*   Detailed Graphs: Gain insights into historical data with interactive graphs that visualize the performance of cryptocurrencies over time. Analyze trends make informed decisions and stay ahead in the dynamic crypto market.
+*   Dark Mode and Light Mode: Immerse yourself in a personalized viewing experience with Crypto Tracker's dynamic theme options. Seamlessly switch between Dark Mode and Light Mode to tailor the interface to your preferences enhancing the application's aesthetic appeal and reducing eye strain during extended usage.
+*   User Dashboard: Upon login users are greeted with a personalized dashboard offering a comprehensive overview of their favorite cryptocurrencies. Track your portfolio view recent activity and stay connected to the crypto world—all from a centralized and user-friendly dashboard.
 
-### `npm test`
+  
+  
+<h2>💻 Built with</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Technologies used in the project:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*   React
+*   Material-UI (MUI)
+*   Firebase (Authentication)
+*   CoinGecko API
