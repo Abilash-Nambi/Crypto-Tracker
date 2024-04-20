@@ -4,7 +4,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://lnkd.in/gY8qEvyD]([https://lnkd.in/gY8qEvyD](https://crypto-tracker-3f2c84.netlify.app/))
+[https://lnkd.in/gY8qEvyD]((https://crypto-tracker-3f2c84.netlify.app/))
 
 
 https://github.com/Abilash-Nambi/Crypto-Tracker/assets/142148604/a4478690-cdc7-4ca0-a40e-2eae4b42598d
